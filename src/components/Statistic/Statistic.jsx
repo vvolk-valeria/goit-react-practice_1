@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Counted extends React.Component {
+class Statistic extends React.Component {
   static defaultProps = {
     initialValue: 0,
   };
@@ -61,9 +61,15 @@ class Counted extends React.Component {
             Bad
           </button>
         </div> */}
-            <h2>Statistic</h2>
-            <Statistics good={this.state.value } neutral={ } bad={ } total={ } positivePercentage={ }></Statistics>
-            {/* <div>
+        <h2>Statistic</h2>
+        <Statistics
+          good={this.state.value}
+          neutral={this.state.value}
+          bad={this.state.value}
+          total={this.state.value}
+          positivePercentage={this.state.value}
+        ></Statistics>
+        {/* <div>
              <p>
           Good: <span>{this.state.value}</span>
         </p>
@@ -74,7 +80,6 @@ class Counted extends React.Component {
           Bad: <span>{this.state.value}</span>
         </p>           
             </div> */}
-
       </div>
     );
   }
@@ -108,23 +113,24 @@ const Controls = ({ onButtonClickNeutral, onButtonClickBad }) => (
   </div>
 );
 
+const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
+  <div>
+    <p>
+      Good: <span>{good}</span>
+    </p>
+    <p>
+      Neutral: <span>{neutral}</span>
+    </p>
+    <p>
+      Bad: <span>{bad}</span>
+    </p>
+    <p>
+      Total: <span>{total}</span>
+    </p>
+    <p>
+      Positive feedback: <span>{positivePercentage}</span>
+    </p>
+  </div>
+);
 
-const Statistics = ({good, neutral, bad, total, positivePercentage }) => (
-                <div>
-             <p>
-          Good: <span>{good}</span>
-        </p>
-        <p>
-          Neutral: <span>{neutral}</span>
-        </p>
-        <p>
-          Bad: <span>{bad}</span>
-        </p>           
-        <p>
-          Total: <span>{total}</span>
-        </p>           
-        <p>
-          Positive feedback: <span>{positivePercentage}</span>
-        </p>           
-            </div>
-)
+export default Statistic;
