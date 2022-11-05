@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
+//import { GlobalStyle } from './GlobalStyle';
+//import { ProductReviewForm } from './components/LoginForm/ProductReviewForm';
 // import TodoList from './components/TodoList';
 // import initialTodos from './todos.json';
 // import TodoEditor from './components/TodoList/TodoEditor';
 // import Filter from './components/TodoList/Filter';
 import ColorPicker from './components/ColorPicker';
 import Statistic from './components/Statistic/Statistic';
-import Dropdown from './components/Dropdown';
+//import Dropdown from './components/Dropdown';
 import { ColorPickerOptions } from './components/ColorPicker/ColorPickerOptions';
-
+//import { LoginForm } from './components/LoginForm/LoginForm';
 //import Form from './components/Form';
-//const shortid = require('shortid');
+const shortid = require('shortid');
 
 //* модуль 2 - TodoList
 // export class App extends Component {
@@ -118,26 +120,48 @@ import { ColorPickerOptions } from './components/ColorPicker/ColorPickerOptions'
 // }
 
 //* модуль 2 - остальные
-// export const App = () => {
-//   return (
-//     <>
-//       {/* <Statistic />
-//       <Dropdown />
-//       <ColorPicker options={ColorPickerOptions} /> */}
-
-//       <Form propOnSubmit={this.formSubmitHandler} />
-//     </>
-//   );
-// };
-
-//* модуль 2 - библиотеки
-
 export const App = () => {
   return (
     <>
       <Statistic />
-      <Dropdown />
+      {/* <Dropdown /> */}
       <ColorPicker options={ColorPickerOptions} />
+
+      {/* <Form propOnSubmit={this.formSubmitHandler} /> //? НЕ РАБОТАЕТ */}
     </>
   );
 };
+
+//* модуль 2 - библиотеки
+
+// export const App = () => {
+//   return (
+//     <>
+//       <LoginForm />
+//     </>
+//   );
+// };
+
+//* ФОРМА
+
+// export class App extends Component {
+//   state = {
+//     filter: '',
+//   };
+//   render() {
+//     return (
+//       <>
+//         <GlobalStyle />
+//         <ProductReviewForm />
+//         <Filtere
+//           onChange={e => this.setState({ filter: e.target.value })}
+//           value={this.state.filter}
+//         />
+//       </>
+//     );
+//   }
+// }
+
+// function Filtere({ onChange, value }) {
+//   return <input type="text" onChange={onChange} value={value} />;
+// }
